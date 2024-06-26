@@ -7,7 +7,7 @@ plt.style.use('dark_background')
 fig, ax = plt.subplots()
 ax.scatter(x_values, y_values, c='yellow', s=10)
 ax.axis()
-plt.savefig('squares.png', bbox_inches='tight')
+plt.show()
 #name x, y, others...
 ax.set_title('Square Numbers', fontsize=24)
 ax.set_xlabel('Value', fontsize=14)
