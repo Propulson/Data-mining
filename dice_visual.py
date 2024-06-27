@@ -6,22 +6,15 @@ from die import Die
 # create 2 cubes
 die1 = Die()
 die2 = Die()
-
+die3 = Die()
 # mode some trying
-results = []
-for roll_num in range(1000):
-    result = die1.roll() + die2.roll()
-    results.append(result)
+results = [die1.roll() + die2.roll() + die3.roll() for roll_num in range(1000)]
 
 #analyze
-frequencies = []
-max_result = die1.sides + die2.sides
-for value in range(2, max_result + 1):
-    frequency = results.count(value)
-    frequencies.append(frequency)
-
+max_result = die1.sides + die2.sides + die3.sides
+frequencies = [results.count(value) for value in range(3, max_result + 1)]
 #view results
-x_values = list(range(2, max_result + 1))
+x_values = list(range(3, max_result + 1))
 data = [Bar(x=x_values, y=frequencies)]
 
 x_axis_config = {'title': 'Result', 'dtick': 1}
